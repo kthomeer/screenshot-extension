@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Full Page Screenshot to Clipboard",
+  "version": "1.0",
+  "description": "Captures a full-size screenshot of the current tab and copies it to the clipboard.",
+  "permissions": [
+    "debugger",
+    "activeTab",
+    "tabs",
+    "clipboardWrite",
+    "scripting",
+    "offscreen"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "capture-screenshot": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Capture full page screenshot to clipboard"
+    }
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
