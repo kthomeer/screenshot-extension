@@ -35,7 +35,7 @@ Go to `chrome://extensions/shortcuts` to reassign the keyboard shortcut.
 
 ## How it works
 
-The extension uses the [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) (the same API that powers DevTools' own "Capture full size screenshot") to measure the full page dimensions and take the screenshot. The resulting PNG is then written to the clipboard from an extension-managed offscreen document, so it does not depend on the inspected page keeping focus.
+The extension uses the [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) (the same API that powers DevTools' own "Capture full size screenshot") to measure the full page dimensions and take the screenshot. The resulting PNG is then written to the clipboard by injecting a small script into the current tab.
 
 ## Permissions
 
@@ -44,9 +44,8 @@ The extension uses the [Chrome DevTools Protocol](https://chromedevtools.github.
 | `debugger` | Access to Chrome DevTools Protocol for full-page capture |
 | `activeTab` | Read the current tab |
 | `tabs` | Query the active tab |
-| `scripting` | Fallback clipboard write path when offscreen documents are unavailable |
+| `scripting` | Inject the clipboard write into the current tab |
 | `clipboardWrite` | Write the image to the clipboard |
-| `offscreen` | Host the clipboard write flow outside the inspected page |
 
 ## License
 
